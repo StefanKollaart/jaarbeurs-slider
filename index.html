@@ -11,15 +11,18 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="slider">
       <div class="slider__head">
         <h2 class="slider__title">Wat zeggen anderen?</h2>
 
         <div class="slider__arrows">
-          <button class="slider__arrow slider__arrow_left">
+          <button
+            class="slider__arrow slider__arrow--disabled slider__arrow_left"
+          >
             <svg
               width="32"
               height="35"
@@ -64,49 +67,58 @@
 
       <div class="slider__slides">
         <div class="slider__slide">
-          <img
-            class="slider__image"
-            src="images/slider-placeholder.png"
-            alt="Foto van Rob Veerman"
-          />
-          <div class="slider__content">“Alles was echt top geregeld.”</div>
-          <div class="slider__subtitle">- Rob Veerman</div>
+          <div class="slider__slide_container">
+            <img
+              class="slider__image"
+              src="images/slider-placeholder.png"
+              alt="Foto van Rob Veerman"
+            />
+            <div class="slider__content">“Alles was echt top geregeld.”</div>
+            <div class="slider__subtitle">- Rob Veerman</div>
+          </div>
         </div>
 
         <div class="slider__slide">
-          <img
-            class="slider__image"
-            src="images/slider-placeholder.png"
-            alt="Foto van Marian"
-          />
-          <div class="slider__content">
-            “Alles was echt top geregeld. Echt helemaal super.”
+          <div class="slider__slide_container">
+            <img
+              class="slider__image"
+              src="images/slider-placeholder.png"
+              alt="Foto van Marian"
+            />
+            <div class="slider__content">
+              “Alles was echt top geregeld. Echt helemaal super.”
+            </div>
+            <div class="slider__subtitle">- Marian</div>
           </div>
-          <div class="slider__subtitle">- Marian</div>
         </div>
 
         <div class="slider__slide">
-          <img
-            class="slider__image"
-            src="images/slider-placeholder.png"
-            alt="Foto van Marian"
-          />
-          <div class="slider__content">
-            “Onze deelname was echt een feestje, ik zou het iedereen aanraden.”
+          <div class="slider__slide_container">
+            <img
+              class="slider__image"
+              src="images/slider-placeholder.png"
+              alt="Foto van Marian"
+            />
+            <div class="slider__content">
+              “Onze deelname was echt een feestje, ik zou het iedereen
+              aanraden.”
+            </div>
+            <div class="slider__subtitle">- Marian</div>
           </div>
-          <div class="slider__subtitle">- Marian</div>
         </div>
 
-        <div class="slider__slide">
-          <img
-            class="slider__image"
-            src="images/slider-placeholder.png"
-            alt="Foto van Rob Veerman"
-          />
-          <div class="slider__content">
-            “Alles was echt top geregeld. We hadden onze ellen.”
+        <div class="slider__slide slider__slide--not-active">
+          <div class="slider__slide_container slider">
+            <img
+              class="slider__image"
+              src="images/slider-placeholder.png"
+              alt="Foto van Rob Veerman"
+            />
+            <div class="slider__content">
+              “Alles was echt top geregeld. We hadden onze ellen.”
+            </div>
+            <div class="slider__subtitle">- Rob Veerman</div>
           </div>
-          <div class="slider__subtitle">- Rob Veerman</div>
         </div>
       </div>
     </div>

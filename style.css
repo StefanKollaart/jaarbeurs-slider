@@ -1,16 +1,89 @@
-/* Importing Dia Bold font */
+/* Local fonts */
 
 @font-face {
   font-family: "Dia Bold";
   src: url("fonts/dia-bold.otf") format("opentype");
 }
 
-/* Styles */
+/* Colors */
+
+:root {
+  --green-grey: #dce1dc;
+  --black: #2d2d2e;
+}
+
+/* General styles */
 
 body {
   font-family: "Roboto", sans-serif;
 }
 
+/* Slider styles */
+
+.slider {
+  padding: 4rem;
+}
+
+.slider__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .slider__title {
   font-family: "Dia Bold", sans-serif;
+  font-size: 3rem;
+  line-height: 3.25rem;
+}
+
+.slider__arrows {
+  display: flex;
+  align-items: center;
+  gap: 2.875rem;
+}
+
+.slider__arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.slider__arrow--disabled {
+  opacity: 0.5;
+}
+
+.slider__slides {
+  display: flex;
+  gap: 1.875rem;
+  flex-wrap: nowrap;
+}
+
+.slider__slide {
+  width: calc(33.33% - 1.875rem);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.slider__slide--not-active {
+  opacity: 0.5;
+}
+
+.slider__slide_container {
+  height: 100%;
+  background-color: var(--green-grey);
+  padding: 1.875rem;
+}
+
+.slider__image {
+  width: 6.25rem;
+}
+
+.slider__content {
+  margin: 0.938rem 0 0.938rem;
+  font-style: italic;
+  font-size: 1.5rem;
+}
+
+.slider__subtitle {
+  margin: 0.938rem 0 0.938rem;
 }
