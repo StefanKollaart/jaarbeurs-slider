@@ -1,28 +1,35 @@
+// Config
+const LARGE_SCREEN_WIDTH = 1200;
+const MEDIUM_SCREEN_WIDTH = 768;
+
+// Elements
 const slidesContainer = document.querySelector(".slider__slides");
 const slides = document.querySelectorAll(".slider__slide");
 const arrows = document.querySelectorAll(".slider__arrow");
 const prevArrow = document.querySelector(".slider__arrow_left");
 const nextArrow = document.querySelector(".slider__arrow_right");
 
+// Slider
 class Slider {
   currentFirstSlide = 0;
   slidesInView = 3;
   widthPerSlide = 100 / this.slidesInView;
 
   constructor() {
-    prevArrow.addEventListener("click", this.prevSlide.bind(this));
-    nextArrow.addEventListener("click", this.nextSlide.bind(this));
-    window.addEventListener("resize", this.handleResize.bind(this));
+    prevArrow.addEventListener("click", () => this.prevSlide());
+    nextArrow.addEventListener("click", () => this.nextSlide());
+    window.addEventListener("resize", () => this.handleResize());
 
+    // Calling handleResize on init, so that the slider is responsive from the start
     this.handleResize();
   }
 
   handleResize() {
     const windowWidth = window.innerWidth;
 
-    if (windowWidth >= 1200) {
+    if (windowWidth >= LARGE_SCREEN_WIDTH) {
       this.slidesInView = 3;
-    } else if (windowWidth >= 768) {
+    } else if (windowWidth >= MEDIUM_SCREEN_WIDTH) {
       this.slidesInView = 2;
     } else {
       this.slidesInView = 1;
