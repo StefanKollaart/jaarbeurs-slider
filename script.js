@@ -7,10 +7,28 @@ const nextArrow = document.querySelector(".slider__arrow_right");
 class Slider {
   currentFirstSlide = 0;
   slidesInView = 3;
+  widthPerSlide = 100 / this.slidesInView;
 
   constructor() {
     prevArrow.addEventListener("click", this.prevSlide.bind(this));
     nextArrow.addEventListener("click", this.nextSlide.bind(this));
+    window.addEventListener("resize", this.handleResize.bind(this));
+
+    this.handleResize();
+  }
+
+  handleResize() {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth >= 1200) {
+      this.slidesInView = 3;
+    } else if (windowWidth >= 768) {
+      this.slidesInView = 2;
+    } else {
+      this.slidesInView = 1;
+    }
+
+    this.updateSlider();
   }
 
   prevSlide() {
@@ -32,10 +50,10 @@ class Slider {
   }
 
   updateSlidesContainer() {
-    const widthPerSlide = 100 / this.slidesInView;
+    this.widthPerSlide = (100 - this.slidesInView * 2) / this.slidesInView;
 
     slidesContainer.style.transform = `translateX(-${
-      widthPerSlide * this.currentFirstSlide
+      this.widthPerSlide * this.currentFirstSlide
     }%)`;
   }
 
@@ -60,6 +78,8 @@ class Slider {
         index < this.currentFirstSlide + this.slidesInView
       )
         slide.classList.add("slider__slide--active");
+
+      slide.style.width = this.widthPerSlide + "%";
     });
   }
 }
