@@ -62,10 +62,11 @@ body {
   width: calc(33.33% - 1.875rem);
   height: auto;
   flex-shrink: 0;
+  opacity: 0.5;
 }
 
-.slider__slide--not-active {
-  opacity: 0.5;
+.slider__slide--active {
+  opacity: 1;
 }
 
 .slider__slide_container {
