@@ -1,0 +1,16 @@
+/* Importing Dia Bold font */
+
+@font-face {
+  font-family: "Dia Bold";
+  src: url("fonts/dia-bold.otf") format("opentype");
+}
+
+/* Styles */
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.slider__title {
+  font-family: "Dia Bold", sans-serif;
+}
