@@ -56,6 +56,7 @@ body {
   display: flex;
   gap: 1.875rem;
   flex-wrap: nowrap;
+  transition: transform 0.5s ease;
 }
 
 .slider__slide {
@@ -63,6 +64,7 @@ body {
   height: auto;
   flex-shrink: 0;
   opacity: 0.5;
+  transition: opacity 1.5s ease;
 }
 
 .slider__slide--active {

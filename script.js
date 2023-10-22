@@ -50,11 +50,16 @@ class Slider {
   }
 
   updateSlidesContainer() {
-    this.widthPerSlide = (100 - this.slidesInView * 2) / this.slidesInView;
+    this.widthPerSlide = 100 / this.slidesInView - 1;
 
-    slidesContainer.style.transform = `translateX(-${
+    // Getting computed gap width from slidesContainer in pixels and adding that times the slide index to make up for gap
+    const paddingOffset =
+      parseFloat(getComputedStyle(slidesContainer).gap) *
+      this.currentFirstSlide;
+
+    slidesContainer.style.transform = `translateX(calc(-${
       this.widthPerSlide * this.currentFirstSlide
-    }%)`;
+    }% - ${paddingOffset}px)`;
   }
 
   updateArrows() {
